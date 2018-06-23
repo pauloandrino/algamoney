@@ -1,7 +1,12 @@
 package com.example.algamoney.api.repository.lancamento;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.algamoney.api.model.Lancamento;
+import com.example.algamoney.api.model.Lancamento_;
+import com.example.algamoney.api.repository.filter.LancamentoFilter;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import org.springframework.util.StringUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -10,15 +15,8 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-
-import com.example.algamoney.api.model.Lancamento_;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
-import org.springframework.util.StringUtils;
-
-import com.example.algamoney.api.model.Lancamento;
-import com.example.algamoney.api.repository.filter.LancamentoFilter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LancamentoRepositoryImpl implements LancamentoRepositoryQuery {
 

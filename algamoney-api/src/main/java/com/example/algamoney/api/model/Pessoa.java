@@ -1,15 +1,9 @@
 package com.example.algamoney.api.model;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "pessoa")
@@ -84,11 +78,8 @@ public class Pessoa {
 			return false;
 		Pessoa other = (Pessoa) obj;
 		if (codigo == null) {
-			if (other.codigo != null)
-				return false;
-		} else if (!codigo.equals(other.codigo))
-			return false;
-		return true;
-	}
+            return other.codigo == null;
+		} else return codigo.equals(other.codigo);
+    }
 	
 }
